@@ -40,8 +40,7 @@
             android:layout_weight="1"
             android:text="@string/rdb_particular"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:onClick="onRadioButtonClicked"/>
+            tools:layout_editor_absoluteY="27dp" />
 
         <RadioButton
             android:id="@+id/rdb_bussines"
@@ -50,8 +49,7 @@
             android:layout_weight="1"
             android:text="@string/rdb_bussines"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="72dp"
-            android:onClick="onRadioButtonClicked"/>
+            tools:layout_editor_absoluteY="72dp"/>
     </RadioGroup>
 
     <include

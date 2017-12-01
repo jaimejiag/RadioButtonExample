@@ -3,6 +3,7 @@ package com.example.jaime.radiobuttonexample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 
 /**
  * Clase de ejemplo de cómo funciona RadioButton y RadioGroup.
@@ -12,6 +13,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     private View constraintParticular;
     private View constraintBussines;
+    private RadioGroup rgTypeClient;
 
 
     @Override
@@ -21,23 +23,22 @@ public class MainActivity extends AppCompatActivity {
 
         constraintParticular = findViewById(R.id.constraint_particular);
         constraintBussines = findViewById(R.id.constraint_bussines);
-    }
 
+        rgTypeClient = findViewById(R.id.rg_typeClient);
+        rgTypeClient.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int id) {    //int i es el id del CheckBox seleccionado.
+                switch (id) {
+                    case R.id.rdb_bussines:
+                        viewParticular(false);
+                        break;
 
-    /**
-     * Método que gestiona el evento onClick en los componentes RadioButton de la interfaz.
-     * @param view
-     */
-    public void onRadioButtonClicked (View view) {
-        switch (view.getId()) {
-            case R.id.rdb_particular:
-                viewParticular(true);
-                break;
-
-            case R.id.rdb_bussines:
-                viewParticular(false);
-                break;
-        }
+                    case R.id.rdb_particular:
+                        viewParticular(true);
+                        break;
+                }
+            }
+        });
     }
 
 
